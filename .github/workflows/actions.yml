@@ -2,10 +2,12 @@ name: Actions Workflow
 
 on:
   push:
+    #branches-ignore:
     branches:
       - master
       - "feature/**" # matches featur/featA, feature/featB, doesn't match feature/feat/a
       - "!feature/featc"
+    #tags-ignore:
     tags: 
       - v1.*
     paths: 
@@ -47,6 +49,7 @@ jobs:
       - name: Simple JS Action
         id: greet 
         uses: actions/hello-world-javascript-action@v1
+        #uses: actions/hello-world-javascript-action@master
         with: 
           who-to-greet: John
       - name: Log Greeting Time
