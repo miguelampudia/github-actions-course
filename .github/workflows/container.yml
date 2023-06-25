@@ -28,7 +28,7 @@ jobs:
       - name: send a slack message
         uses: docker://technosophos/slack-notify
         env:
-          SLACK_WEBHOOK: https://hooks.slack.com/services/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 #${{ secrets.SLACK_WEBHOOK }}
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }} #https://hooks.slack.com/services/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
           SLACK_MESSAGE: "Hello slack"
   node-docker:
     runs-on: ubuntu-latest
